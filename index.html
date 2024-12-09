@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Plant Monitor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>My Plant Monitor 🌱</h1>
+    <p>Keep track of your plant's environment in real-time</p>
+  </header>
+
+  <div id="content">
+    <div class="status" id="status">Connecting to MQTT broker...</div>
+
+    <div id="data">
+      <h2>Live Sensor Data</h2>
+      <div class="reading">
+        <span>🌡️ Temperature:</span>
+        <span id="temperature">N/A °C</span>
+      </div>
+      <div class="reading">
+        <span>💧 Humidity:</span>
+        <span id="humidity">N/A %</span>
+      </div>
+      <div class="reading">
+        <span>☀️ Sunlight Intensity:</span>
+        <span id="sunlight">N/A %</span>
+      </div>
+    </div>
+
+    <button id="reload-btn" onclick="reloadSensorData()">Reload Data</button>
+  </div>
+
+  <footer>
+    <p>Powered by MQTT and IoT 🌐</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
